@@ -3,8 +3,14 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import CreateTask from "./components/CreateTask";
 import Filter from "./components/Filter";
+import TasksView from "./components/TasksView";
+import Task from "./components/Task";
+
+import { useState } from "react";
 
 function App() {
+  const [tasks, setTasks] = useState([<Task name="Task1" id="1" />]);
+
   return (
     <div className="App">
       <Header />
@@ -12,11 +18,15 @@ function App() {
         <div className="row">
           <div className="col-md-4 col-sm-6">
             <div className="user-form p-4 border rounded-2" id="create-form">
-              <CreateTask />
+              <CreateTask tasks={tasks} />
             </div>
           </div>
-          <div class="col-md-8 col-sm-6 col-12 layout">
+          <div className="col-md-8 col-sm-6 col-12 layout">
             <Filter />
+          </div>
+          <div class="row margin-top-5" id="taskCards">
+            {/* <TasksView tasks={tasks} /> */}
+            {tasks}
           </div>
         </div>
       </div>
