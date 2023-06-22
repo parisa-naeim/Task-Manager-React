@@ -2,6 +2,7 @@ import "./App.css";
 import Header from "./components/Header";
 import Footer from "./components/Footer";
 import CreateTask from "./components/CreateTask";
+import Filter from "./components/Filter";
 
 function App() {
   return (
@@ -13,6 +14,9 @@ function App() {
             <div className="user-form p-4 border rounded-2" id="create-form">
               <CreateTask />
             </div>
+          </div>
+          <div class="col-md-8 col-sm-6 col-12 layout">
+            <Filter />
           </div>
         </div>
       </div>
