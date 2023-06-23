@@ -9,7 +9,16 @@ import Task from "./components/Task";
 import { useState } from "react";
 
 function App() {
-  const [tasks, setTasks] = useState([<Task name="Task1" id="1" />]);
+  const [tasks, setTasks] = useState([
+    <Task
+      name="Task1"
+      id="1"
+      status="in-progress"
+      description="task details"
+      assignedTo="Parisa"
+      dueDate="12/06/2023"
+    />,
+  ]);
 
   return (
     <div className="App">
@@ -23,10 +32,9 @@ function App() {
           </div>
           <div className="col-md-8 col-sm-6 col-12 layout">
             <Filter />
-          </div>
-          <div class="row margin-top-5" id="taskCards">
-            {/* <TasksView tasks={tasks} /> */}
-            {tasks}
+            <div class="row margin-top-5" id="taskCards">
+              {tasks}
+            </div>
           </div>
         </div>
       </div>
