@@ -1,4 +1,15 @@
-function CreateTask() {
+function CreateTask(props) {
+  const createTask = () => {
+    props.onCreate({
+      id: "1",
+      name: "my task1",
+      status: "in-progress",
+      description: "task details",
+      assignedTo: "Parisa",
+      dueDate: "12/06/2023",
+    });
+  };
+
   return (
     <div>
       <label for="name" className="form-label">
@@ -48,12 +59,14 @@ function CreateTask() {
         <option value="done">Done</option>
       </select>
       <br />
-      <input
-        type="submit"
+      <button
+        onClick={createTask}
         className="btn btn-primary"
         value="Create"
         id="create"
-      />
+      >
+        Create
+      </button>
       <input
         type="reset"
         className="btn btn-secondary"

@@ -1,68 +1,64 @@
-function Task(props) {
+function Task({ task }) {
   return (
-    <div class="col-md-6 col-lg-4 col-12" id={props.id + "-original"}>
+    <div class="col-md-6 col-lg-4 col-12" id={task.id + "-original"}>
       <div class="card">
         <div class="change">
           <span
             class="material-symbols-outlined avatar"
-            title={props.assignedTo}
+            title={task.assignedTo}
           >
             person
           </span>
         </div>
         <div class="card-body">
-          <h5 class="card-title">{props.name}</h5>
+          <h5 class="card-title">{task.name}</h5>
           <h6 class="card-subtitle mb-2 text-body-secondary">
-            {props.status && props.status.toUpperCase()}
+            {task.status && task.status.toUpperCase()}
           </h6>
-          <p class="card-text"> {props.description}</p>
-          <label>{props.assignedTo}</label>
+          <p class="card-text"> {task.description}</p>
+          <label>{task.assignedTo}</label>
           <br />
-          <label>{props.dueDate}</label>
+          <label>{task.dueDate}</label>
           <br />
           <br />
-          <span class="material-symbols-outlined delete-btn" id={props.id}>
+          <span class="material-symbols-outlined delete-btn" id={task.id}>
             delete
           </span>
-          <span class="material-symbols-outlined edit-btn" id={props.id}>
+          <span class="material-symbols-outlined edit-btn" id={task.id}>
             stylus
           </span>
-          {/* <span style="display:${(props.status === "done") ? "none" : "inilne-block"}" class="material-symbols-outlined mark-as-done" title="Mark as done" id="${props.id}">done</span> */}
+          {/* <span style="display:${(task.status === "done") ? "none" : "inilne-block"}" class="material-symbols-outlined mark-as-done" title="Mark as done" id="${task.id}">done</span> */}
         </div>
       </div>
 
       <div
         class="col-md-6 col-lg-4 col-12"
-        id={props.id + "-editable"}
+        id={task.id + "-editable"}
         style={{ display: "none" }}
       >
         <div class="card pt-3">
           <div class="change">
-            <span class="material-symbols-outlined save-btn" id={props.id}>
+            <span class="material-symbols-outlined save-btn" id={task.id}>
               save
             </span>
-            <span class="material-symbols-outlined cancel-btn" id={props.id}>
+            <span class="material-symbols-outlined cancel-btn" id={task.id}>
               cancel
             </span>
           </div>
           <div class="card-body">
-            <input id={props.id + "-name"} value={props.name} type="text" />
-            <input id={props.id + "-status"} value={props.status} />
+            <input id={task.id + "-name"} value={task.name} type="text" />
+            <input id={task.id + "-status"} value={task.status} />
             <input
-              id={props.id + "-description"}
+              id={task.id + "-description"}
               type="text"
-              value={props.description}
+              value={task.description}
             />
             <input
-              id={props.id + "-assignedTo"}
+              id={task.id + "-assignedTo"}
               type="text"
-              value={props.assignedTo}
+              value={task.assignedTo}
             />
-            <input
-              id={props.id + "-dueDate"}
-              type="text"
-              value={props.dueDate}
-            />
+            <input id={task.id + "-dueDate"} type="text" value={task.dueDate} />
           </div>
         </div>
       </div>

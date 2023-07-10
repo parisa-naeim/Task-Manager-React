@@ -9,16 +9,11 @@ import Task from "./components/Task";
 import { useState } from "react";
 
 function App() {
-  const [tasks, setTasks] = useState([
-    <Task
-      name="Task1"
-      id="1"
-      status="in-progress"
-      description="task details"
-      assignedTo="Parisa"
-      dueDate="12/06/2023"
-    />,
-  ]);
+  const [tasks, setTasks] = useState([]);
+
+  const getTasks = () => {
+    return tasks.map((task) => <Task task={task} />);
+  };
 
   return (
     <div className="App">
@@ -27,13 +22,15 @@ function App() {
         <div className="row">
           <div className="col-md-4 col-sm-6">
             <div className="user-form p-4 border rounded-2" id="create-form">
-              <CreateTask tasks={tasks} />
+              <CreateTask
+                onCreate={(newTask) => setTasks([...tasks, newTask])}
+              />
             </div>
           </div>
           <div className="col-md-8 col-sm-6 col-12 layout">
             <Filter />
             <div class="row margin-top-5" id="taskCards">
-              {tasks}
+              {getTasks()}
             </div>
           </div>
         </div>
