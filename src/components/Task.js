@@ -1,15 +1,10 @@
+import CardAvatar from "./CardAvatar";
+
 function Task({ task }) {
   return (
     <div class="col-md-6 col-lg-4 col-12" id={task.id + "-original"}>
       <div class="card">
-        <div class="change">
-          <span
-            class="material-symbols-outlined avatar"
-            title={task.assignedTo}
-          >
-            person
-          </span>
-        </div>
+        <CardAvatar assignedTo={task.assignedTo} />
         <div class="card-body">
           <h5 class="card-title">{task.name}</h5>
           <h6 class="card-subtitle mb-2 text-body-secondary">
