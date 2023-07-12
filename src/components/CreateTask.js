@@ -1,13 +1,16 @@
+import { useState } from "react";
+
 function CreateTask(props) {
+  const [inputs, setInputs] = useState({});
+
+  const handleChange = (event) => {
+    const name = event.target.name;
+    const value = event.target.value;
+    setInputs((values) => ({ ...values, [name]: value }));
+  };
+
   const createTask = () => {
-    props.onCreate({
-      id: "1",
-      name: "my task1",
-      status: "in-progress",
-      description: "task details",
-      assignedTo: "Parisa",
-      dueDate: "12/06/2023",
-    });
+    props.onCreate(inputs);
   };
 
   return (
@@ -15,7 +18,14 @@ function CreateTask(props) {
       <label for="name" className="form-label">
         Name
       </label>
-      <input type="text" className="form-control" id="name" name="name" />
+      <input
+        type="text"
+        className="form-control"
+        id="name"
+        name="name"
+        value={inputs.name || ""}
+        onChange={handleChange}
+      />
       <p id="invalidName" className="error"></p>
       <br />
       <label for="description" className="form-label">
@@ -25,6 +35,8 @@ function CreateTask(props) {
         className="form-control"
         id="description"
         name="description"
+        value={inputs.description || ""}
+        onChange={handleChange}
       ></textarea>
       <p id="invalidDescription" className="error"></p>
       <br />
@@ -35,7 +47,9 @@ function CreateTask(props) {
         type="text"
         className="form-control"
         id="assigned-to"
-        name="assigned-to"
+        name="assignedTo"
+        value={inputs.assignedTo || ""}
+        onChange={handleChange}
       />
       <p id="invalidAssignedTo" className="error"></p>
       <br />
@@ -46,13 +60,21 @@ function CreateTask(props) {
         type="date"
         className="form-control"
         id="due-Date"
-        name="due-Date"
+        name="dueDate"
+        value={inputs.dueDate || ""}
+        onChange={handleChange}
       />
       <br />
       <label for="status" className="form-label">
         Status
       </label>
-      <select name="status" className="form-select" id="status">
+      <select
+        name="status"
+        className="form-select"
+        id="status"
+        value={inputs.status || "to-do"}
+        onChange={handleChange}
+      >
         <option value="to-do">To Do</option>
         <option value="in-progress">In Progress</option>
         <option value="review">Review</option>
