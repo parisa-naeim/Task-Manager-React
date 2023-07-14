@@ -3,7 +3,6 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import CreateTask from "./components/CreateTask";
 import Filter from "./components/Filter";
-import TasksView from "./components/TasksView";
 import Task from "./components/Task";
 
 import { useState } from "react";
