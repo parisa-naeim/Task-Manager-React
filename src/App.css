@@ -58,11 +58,9 @@
 }
 
 .card {
-  background-color: rgb(207, 201, 201);
+  background-color: rgba(230, 230, 230, 0.349);
   margin-bottom: 5px;
-  border: 1px solid;
   padding: 3px;
-  box-shadow: 5px 3px rgb(174, 184, 46);
 }
 
 

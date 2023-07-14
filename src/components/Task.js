@@ -11,8 +11,8 @@ function Task({ task }) {
             {task.status && task.status.toUpperCase()}
           </h6>
           <p class="card-text"> {task.description}</p>
-          <label>{task.assignedTo}</label>
-          <br />
+          {/* <label>{task.assignedTo}</label>
+          <br /> */}
           <label>{task.dueDate}</label>
           <br />
           <br />
