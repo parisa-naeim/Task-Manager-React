@@ -81,20 +81,19 @@ function CreateTask(props) {
         <option value="done">Done</option>
       </select>
       <br />
-      <button
-        onClick={createTask}
-        className="btn btn-primary"
-        value="Create"
-        id="create"
-      >
-        Create
-      </button>
-      <input
-        type="reset"
-        className="btn btn-secondary"
-        value="Reset"
-        id="reset"
-      />
+      <div className="buttons-container">
+        <button
+          onClick={createTask}
+          className="btn btn-primary"
+          value="Create"
+          id="create"
+        >
+          Create
+        </button>
+        <button type="reset" className="btn btn-secondary" id="reset">
+          Reset
+        </button>
+      </div>
     </div>
   );
 }

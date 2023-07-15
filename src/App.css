@@ -188,3 +188,13 @@ p.error {
     transform: rotate(360deg);
   }
 }
+
+.buttons-container{
+  display: flex;
+  justify-content: space-evenly;
+}
+
+.buttons-container button{
+  width: 7em;
+}
+
