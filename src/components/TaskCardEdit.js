@@ -1,11 +1,15 @@
-function TaskCardEdit({ task }) {
+function TaskCardEdit({ task, onCancel }) {
   return (
     <div className="card pt-3" id={task.id + "-editable"}>
       <div className="change">
         <span className="material-symbols-outlined save-btn" id={task.id}>
           save
         </span>
-        <span className="material-symbols-outlined cancel-btn" id={task.id}>
+        <span
+          className="material-symbols-outlined cancel-btn"
+          id={task.id}
+          onClick={onCancel}
+        >
           cancel
         </span>
       </div>
