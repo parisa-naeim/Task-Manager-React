@@ -16,7 +16,7 @@ function CreateTask(props) {
   return (
     <div>
       <label htmlFor="name" className="form-label">
-        Name
+        Task Title
       </label>
       <input
         type="text"
