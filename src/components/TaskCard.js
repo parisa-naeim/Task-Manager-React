@@ -1,6 +1,6 @@
 import CardAvatar from "./CardAvatar";
 
-function Task({ task, onDelete }) {
+function TaskCard({ task, onDelete }) {
   const deleteTask = () => {
     onDelete(task.id);
   };
@@ -69,4 +69,4 @@ function Task({ task, onDelete }) {
   );
 }
 
-export default Task;
+export default TaskCard;

@@ -3,7 +3,7 @@ import Header from "./components/Header";
 import Footer from "./components/Footer";
 import CreateTask from "./components/CreateTask";
 import Filter from "./components/Filter";
-import Task from "./components/Task";
+import TaskCard from "./components/TaskCard";
 
 import { useState } from "react";
 
@@ -16,7 +16,7 @@ function App() {
 
   const getTasks = () => {
     return tasks.map((task) => (
-      <Task key={task.id} task={task} onDelete={deleteTask} />
+      <TaskCard key={task.id} task={task} onDelete={deleteTask} />
     ));
   };
 
