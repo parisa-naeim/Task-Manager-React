@@ -10,7 +10,10 @@ function CreateTask(props) {
   };
 
   const createTask = () => {
-    props.onCreate(inputs);
+    props.onCreate({
+      ...inputs,
+      id: (Math.random() + 1).toString(36).substring(7),
+    });
   };
 
   return (

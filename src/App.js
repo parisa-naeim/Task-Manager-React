@@ -10,8 +10,14 @@ import { useState } from "react";
 function App() {
   const [tasks, setTasks] = useState([]);
 
+  const deleteTask = (taskId) => {
+    setTasks(tasks.filter((t) => t.id != taskId));
+  };
+
   const getTasks = () => {
-    return tasks.map((task) => <Task task={task} />);
+    return tasks.map((task) => (
+      <Task key={task.id} task={task} onDelete={deleteTask} />
+    ));
   };
 
   return (

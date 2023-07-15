@@ -1,6 +1,10 @@
 import CardAvatar from "./CardAvatar";
 
-function Task({ task }) {
+function Task({ task, onDelete }) {
+  const deleteTask = () => {
+    onDelete(task.id);
+  };
+
   return (
     <div className="col-md-6 col-lg-4 col-12" id={task.id + "-original"}>
       <div className="card">
@@ -16,7 +20,11 @@ function Task({ task }) {
           <label>{task.dueDate}</label>
           <br />
           <br />
-          <span className="material-symbols-outlined delete-btn" id={task.id}>
+          <span
+            className="material-symbols-outlined delete-btn"
+            id={task.id}
+            onClick={deleteTask}
+          >
             delete
           </span>
           <span className="material-symbols-outlined edit-btn" id={task.id}>
