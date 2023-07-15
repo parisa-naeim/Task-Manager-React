@@ -15,7 +15,7 @@ function CreateTask(props) {
 
   return (
     <div>
-      <label for="name" className="form-label">
+      <label htmlFor="name" className="form-label">
         Name
       </label>
       <input
@@ -28,7 +28,7 @@ function CreateTask(props) {
       />
       <p id="invalidName" className="error"></p>
       <br />
-      <label for="description" className="form-label">
+      <label htmlFor="description" className="form-label">
         Description
       </label>
       <textarea
@@ -40,7 +40,7 @@ function CreateTask(props) {
       ></textarea>
       <p id="invalidDescription" className="error"></p>
       <br />
-      <label for="assigned-to" className="form-label">
+      <label htmlFor="assigned-to" className="form-label">
         Assigned to
       </label>
       <input
@@ -53,7 +53,7 @@ function CreateTask(props) {
       />
       <p id="invalidAssignedTo" className="error"></p>
       <br />
-      <label for="due-Date" className="form-label">
+      <label htmlFor="due-Date" className="form-label">
         Due Date
       </label>
       <input
@@ -65,7 +65,7 @@ function CreateTask(props) {
         onChange={handleChange}
       />
       <br />
-      <label for="status" className="form-label">
+      <label htmlFor="status" className="form-label">
         Status
       </label>
       <select

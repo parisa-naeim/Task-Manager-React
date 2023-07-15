@@ -28,7 +28,7 @@ function App() {
           </div>
           <div className="col-md-8 col-sm-6 col-12 layout">
             <Filter />
-            <div class="row margin-top-5" id="taskCards">
+            <div className="row margin-top-5" id="taskCards">
               {getTasks()}
             </div>
           </div>
